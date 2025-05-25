@@ -24,14 +24,14 @@ group = "com.ultralytics.yolo"
 version = "1.0-SNAPSHOT"
 
 buildscript {
-    ext.kotlin_version = "1.8.22"
+    ext.kotlin_version = "2.1.20"
     repositories {
         google()
         mavenCentral()
     }
 
     dependencies {
-        classpath("com.android.tools.build:gradle:8.2.1")
+        classpath("com.android.tools.build:gradle:8.10.0")
         classpath("org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version")
     }
 }
@@ -48,6 +48,7 @@ apply plugin: "kotlin-android"
 
 android {
     namespace = "com.ultralytics.yolo"
+    
     compileSdk = 35
 
     compileOptions {
@@ -56,14 +57,7 @@ android {
     }
 
     kotlinOptions {
-        jvmTarget = JavaVersion.VERSION_17.toString() // Use toString() for jvmTarget
-    }
-
-    // Configure Java Toolchain to use JDK 17
-    java {
-        toolchain {
-            languageVersion = JavaLanguageVersion.of(17)
-        }
+        jvmTarget = JavaVersion.VERSION_17
     }
 
     sourceSets {

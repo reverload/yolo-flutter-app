@@ -1,8 +1,8 @@
 plugins {
-    id "com.android.application"
-    id "kotlin-android"
+    id("com.android.application")
+    id("kotlin-android")
     // The Flutter Gradle Plugin must be applied after the Android and Kotlin Gradle plugins.
-    id "dev.flutter.flutter-gradle-plugin"
+    id("dev.flutter.flutter-gradle-plugin")
 }
 
 android {
@@ -17,13 +17,6 @@ android {
 
     kotlinOptions {
         jvmTarget = JavaVersion.VERSION_17.toString() // Use toString() for jvmTarget
-    }
-
-    // Configure Java Toolchain to use JDK 17
-    java {
-        toolchain {
-            languageVersion = JavaLanguageVersion.of(17)
-        }
     }
 
     defaultConfig {
@@ -41,7 +34,7 @@ android {
         release {
             // TODO: Add your own signing config for the release build.
             // Signing with the debug keys for now, so `flutter run --release` works.
-            signingConfig = signingConfigs.debug
+            signingConfig = signingConfigs.getByName("debug")
         }
     }
 
